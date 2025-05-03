@@ -13,9 +13,9 @@ function App() {
         <section className="w-11/12 max-w-[950px] lg:w-9/12 m-auto">
           <Home.Welcome id="home" />
           <Separator className="my-4" />
-          <Home.Skills id="skills" />
-          <Separator className="my-4" />
           <Home.About id="about" />
+          <Separator className="my-4" />
+          <Home.Skills id="skills" />
           <Separator className="my-4" />
           <Home.Work id="work" />
           <Separator className="my-4" id="contact" />
