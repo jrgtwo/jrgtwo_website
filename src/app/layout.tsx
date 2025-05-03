@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { MainHeader } from '@/components/mainHeader/MainHeader'
+import { MainFooter } from '@/components/mainFooter/MainFooter'
 import '../index.css'
 
 export const metadata: Metadata = {
@@ -25,7 +26,10 @@ export default function RootLayout({
 
       <body>
         <div id="root">
-          <MainHeader />{children}</div>
+          <MainHeader />
+          {children}
+          <MainFooter />
+        </div>
 
       </body>
 

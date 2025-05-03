@@ -24,7 +24,7 @@ export const MainNav = () => {
         </Popover>
       </li >
       <li><Separator orientation="vertical" /></li>
-      <li><a href="/#blog" className={buttonVariants({ "variant": "link" })}>Blog</a></li>
+      <li><a href="/blog" className={buttonVariants({ "variant": "link" })}>Blog</a></li>
     </menu >
   )
 }

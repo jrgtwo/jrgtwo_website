@@ -6,8 +6,8 @@ import { MainFooter } from "./components/mainFooter/MainFooter"
 export function App() {
   return (
     <>
-      <MainHeader />
-      <Separator className="mb-4" />
+      {/* <MainHeader /> */}
+      {/* <Separator className="mb-4" /> */}
       <section className="w-11/12 max-w-[950px] lg:w-9/12 m-auto">
         <Home.Welcome id="home" />
         <Separator className="my-4" />
@@ -19,7 +19,7 @@ export function App() {
         <Separator className="my-4" id="contact" />
         <Home.Contact id="contact" />
         <Separator className="my-4" />
-        <MainFooter />
+        {/* <MainFooter /> */}
       </section>
     </>
   )
