@@ -1,11 +1,13 @@
 import { Card, CardContent } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
-import NBCLogo from './../../assets/NBC_logo.png';
-import DisneyLogo from './../../assets/DISNEY_Logo.png'
-import NFLLogo from './../../assets/NFL_Logo.png'
-import MGMLogo from './../../assets/MGM_logo.png'
+import NBCLogo from './../../public/logos/NBC_logo.png';
+import DisneyLogo from './../../public/logos/DISNEY_logo.png'
+import NFLLogo from './../../public/logos/NFL_logo.png'
+
+import MGMLogo from '../../public/logos/MGM_logo.png'
 
 export const Work = ({ id }: { id: string }) => {
+
   return (
     <section id={id} className="py-full-section px-0 lg:px-full-section scroll-mt-[85px]">
       <h2 className="text-3xl font-[Cal_Sans] text-destructive" style={{ 'textShadow': 'white 0px 0.005ch 0px, rgb(134, 2, 2) 1px 1px 0px' }}>What I've Done</h2>
@@ -14,7 +16,7 @@ export const Work = ({ id }: { id: string }) => {
           <CardContent>
             <div className=" flex-col sm:flex-row flex gap-8 items-center">
               <div className="flex justify-center flex-1  bg-white rounded-lg">
-                <img src={NBCLogo} alt="NBC logo" className="max-h-[250px] scale-90" />
+                <img src={NBCLogo.src} alt="NBC logo" className="max-h-[250px] scale-90" />
               </div>
               <div className="flex-2">
                 <h4 className="font-[Cal_Sans] text-2xl">NBC.com</h4>
@@ -29,7 +31,7 @@ export const Work = ({ id }: { id: string }) => {
           <CardContent>
             <div className=" flex-col sm:flex-row flex gap-8 items-center">
               <div className="flex justify-center flex-1  bg-white rounded-lg">
-                <img src={DisneyLogo} alt="Disney logo" className="max-h-[250px]" />
+                <img src={DisneyLogo.src} alt="Disney logo" className="max-h-[250px]" />
               </div>
               <div className="flex-2">
                 <h4 className="font-[Cal_Sans] text-2xl">Disney/Disney Streaming</h4>
@@ -44,7 +46,7 @@ export const Work = ({ id }: { id: string }) => {
           <CardContent>
             <div className=" flex-col sm:flex-row flex gap-8 items-center">
               <div className="flex justify-center flex-1  bg-white rounded-lg overflow-hidden">
-                <img src={NFLLogo} alt="NFL logo" className="max-h-[250px] scale-90" />
+                <img src={NFLLogo.src} alt="NFL logo" className="max-h-[250px] scale-90" />
               </div>
               <div className="flex-2">
                 <h4 className="font-[Cal_Sans] text-2xl">National Footbal League/NFL.com</h4>
@@ -59,7 +61,7 @@ export const Work = ({ id }: { id: string }) => {
           <CardContent>
             <div className=" flex-col sm:flex-row flex gap-8 items-center">
               <div className="flex justify-center flex-1   bg-white rounded-lg">
-                <img src={MGMLogo} alt="MGM logo" className="max-w-[250px] scale-90" />
+                <img src={MGMLogo.src} alt="MGM logo" className="max-w-[250px] scale-90" />
               </div>
               <div className="flex-2">
                 <h4 className="font-[Cal_Sans] text-2xl">Metro-Goldwyn-Mayer/MGM.com</h4>

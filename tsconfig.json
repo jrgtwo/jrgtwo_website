@@ -9,11 +9,48 @@
     }
   ],
   "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
     "baseUrl": ".",
     "paths": {
       "@/*": [
         "./src/*"
       ]
-    }
-  }
+    },
+    "target": "ES2017",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "noEmit": false,
+    "incremental": true,
+    "module": "esnext",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "./dist/types/**/*.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "./node_modules"
+  ]
 }

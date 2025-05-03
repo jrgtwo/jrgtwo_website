@@ -15,7 +15,7 @@
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
-    "noEmit": true,
+    "noEmit": false,
     "jsx": "react-jsx",
     /* Linting */
     "strict": true,
@@ -29,7 +29,12 @@
       "@/*": [
         "./src/*"
       ]
-    }
+    },
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
   },
   "include": [
     "src"
