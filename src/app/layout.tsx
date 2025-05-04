@@ -27,7 +27,9 @@ export default function RootLayout({
       <body>
         <div id="root">
           <MainHeader />
-          {children}
+          <section className="w-11/12 max-w-[950px] lg:w-9/12 m-auto">
+            {children}
+          </section>
           <MainFooter />
         </div>
 

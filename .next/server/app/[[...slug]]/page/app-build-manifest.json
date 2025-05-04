@@ -1,7 +1,8 @@
 {
   "pages": {
     "/[[...slug]]/page": [
-      "static/chunks/node_modules_b32b2c58._.js",
+      "static/chunks/node_modules_f6354b19._.js",
+      "static/chunks/src_a16ef205._.js",
       "static/chunks/src_index_a80815d4.css",
       "static/chunks/src_app_layout_tsx_c0237562._.js",
       "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
