@@ -8,10 +8,15 @@ export default async function BlogPostPage({ params }: { params: Promise<{ post:
   const postId = paramsPost?.[0]
 
   if (!supabase) return
+  const { data: post, error } = await supabase
+    .from('Blog')
+    .select('*')
+    .eq('id', parseInt(postId, 10))
+    .limit(1)
+    .single()
 
-  const { data: posts, error } = await supabase.from('Blog').select('*').eq('id', parseInt(postId, 10))
-  if (error || !posts) return
-  const post = posts[0]
+  if (error || !post) return
+
   return (
     <article>
       <a href={`/blog/post/${postId}`}><h2 className="text-3xl font-[Cal_Sans] ">{post.title}</h2></a>
