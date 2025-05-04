@@ -1,7 +1,7 @@
 import { supabaseClient as supabase } from "@/lib/supabase"
 import { Separator } from "@/components/ui/separator"
 import type { POSTS_PROP } from "./BlogSidebar"
-export default function FeaturedPosts({ posts }: { posts: POSTS_PROP[] }) {
+export default function FeaturedPosts({ posts }: { posts: POSTS_PROP[] | null }) {
   if (!supabase) return
 
   return (

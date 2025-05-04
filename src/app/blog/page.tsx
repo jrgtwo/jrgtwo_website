@@ -22,7 +22,7 @@ export default async function Page() {
       <h2 className="text-3xl font-[Cal_Sans] text-destructive">Latest Posts</h2>
       <Separator className="my-4" />
       {data?.map((post, index) => (
-        <>
+        <div key={`latest-posts-${post.id}`}>
           {index !== 0 && <Separator className="my-4" />}
           <div>
             <a href={`/blog/post/${post.id}`}>
@@ -34,7 +34,7 @@ export default async function Page() {
               </div>
             </a>
           </div>
-        </>
+        </div>
       ))}
     </>
   )
