@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "dev-next": "next dev --turbopack"
+    "dev-next": "next dev --turbopack",
+    "sync-db-types": "npx supabase gen types typescript --project-id nvqrxmwjwwludwohgocs --schema public > src/types/db/database.types.ts --debug"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.7",
@@ -43,6 +44,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
+    "supabase": "^2.22.6",
     "tw-animate-css": "^1.2.8",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.26.1",
