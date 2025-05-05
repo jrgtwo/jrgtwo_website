@@ -2,7 +2,9 @@ import { supabaseClient as supabase } from "@/lib/supabase";
 import type { Database } from "@/types/db/database.types";
 
 type BlogPostPage = Database['public']['Tables']['Blog']['Row']
-
+export function createMarkup(dirty) {
+  return { __html: dirty };
+}
 export default async function BlogPostPage({ params }: { params: Promise<{ post: string }> }) {
   const { post: paramsPost } = await params;
   const postId = paramsPost?.[0]
@@ -18,7 +20,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ post:
   if (error || !post) return
 
   return (
-    <article>
+    <article className="text-">
       <a href={`/blog/post/${postId}`}><h2 className="text-3xl font-[Cal_Sans] ">{post.title}</h2></a>
       <p>{new Date(post.created_at).toLocaleDateString()}</p>
       <div className="p-4">
@@ -29,7 +31,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ post:
             <p>{post.image_description}</p>
           </div>
         )}
-        <div>{post.post}</div>
+        <div dangerouslySetInnerHTML={createMarkup(post.post)} />
       </div>
     </article>
 
