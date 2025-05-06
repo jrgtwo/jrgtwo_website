@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react"
-import { createClient } from '@/lib/supabase/server';
+import { createClient } from '@/lib/db/server';
 import BlogSidebar from "@/components/blog/sidebar/BlogSidebar"
 import { Separator } from "@/components/ui/separator"
 

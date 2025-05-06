@@ -1,4 +1,4 @@
-import { createClient } from "@/lib/supabase/server";
+import { createClient } from "@/lib/db/server";
 import { PAGE_OFFSET } from "@/app/blog/constants"
 import BlogList from "@/components/blog/page/BlogList"
 import BlogListPagination from "@/components/blog/page/BlogListPagination"

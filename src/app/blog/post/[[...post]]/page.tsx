@@ -1,4 +1,4 @@
-import { createClient } from '@/lib/supabase/server';
+import { createClient } from '@/lib/db/server';
 import type { Database } from "@/types/db/database.types";
 import BlogPost from "@/components/blog/post/BlogPost";
 type BlogPostPage = Database['public']['Tables']['Blog']['Row']
