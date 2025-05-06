@@ -1,5 +1,5 @@
 
-import { BlogPage } from '@/components/blog/page/BlogPage'
+import BlogPage from '@/components/blog/page/BlogPage'
 
 
 export default async function Page({ params }: { params: Promise<{ page: string }> }) {

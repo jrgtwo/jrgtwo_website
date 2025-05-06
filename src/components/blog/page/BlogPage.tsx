@@ -3,7 +3,7 @@ import { PAGE_OFFSET } from "@/app/blog/constants"
 import BlogList from "@/components/blog/page/BlogList"
 import BlogListPagination from "@/components/blog/page/BlogListPagination"
 
-export const BlogPage = async ({ params }: { params: Promise<{ page: string }> }) => {
+export default async function BlogPage({ params }: { params: Promise<{ page: string }> }) {
   if (!supabase) return
   const { page: paramsPage } = await params;
   const normalizedPage = paramsPage

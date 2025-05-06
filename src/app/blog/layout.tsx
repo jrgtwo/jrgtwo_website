@@ -13,6 +13,8 @@ export default async function BlogLayout({ children }: PropsWithChildren) {
     .limit(5)
     .order('created_at', { ascending: false })
 
+  if (error) return
+
   return (
     <>
       <section className="py-full-section">
