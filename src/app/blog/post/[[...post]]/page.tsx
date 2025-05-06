@@ -1,4 +1,4 @@
-import { supabaseClient as supabase } from "@/lib/supabase";
+import { createClient } from '@/lib/supabase/server';
 import type { Database } from "@/types/db/database.types";
 import BlogPost from "@/components/blog/post/BlogPost";
 type BlogPostPage = Database['public']['Tables']['Blog']['Row']
@@ -7,7 +7,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ post:
   const { post: paramsPost } = await params;
   const postId = paramsPost?.[0]
 
-  if (!supabase) return
+  const supabase = await createClient();
   const { data: post, error } = await supabase
     .from('Blog')
     .select('*')

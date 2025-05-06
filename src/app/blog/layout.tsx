@@ -1,10 +1,10 @@
 import { PropsWithChildren } from "react"
-import { supabaseClient as supabase } from "@/lib/supabase"
+import { createClient } from '@/lib/supabase/server';
 import BlogSidebar from "@/components/blog/sidebar/BlogSidebar"
 import { Separator } from "@/components/ui/separator"
 
 export default async function BlogLayout({ children }: PropsWithChildren) {
-  if (!supabase) return
+  const supabase = await createClient();
 
   const { data: featuredPosts, error } = await supabase
     .from('Blog')

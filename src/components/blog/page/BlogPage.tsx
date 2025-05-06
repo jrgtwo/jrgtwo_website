@@ -1,10 +1,10 @@
-import { supabaseClient as supabase } from "@/lib/supabase"
+import { createClient } from "@/lib/supabase/server";
 import { PAGE_OFFSET } from "@/app/blog/constants"
 import BlogList from "@/components/blog/page/BlogList"
 import BlogListPagination from "@/components/blog/page/BlogListPagination"
 
 export default async function BlogPage({ params }: { params: Promise<{ page: string }> }) {
-  if (!supabase) return
+  const supabase = await createClient();
   const { page: paramsPage } = await params;
   const normalizedPage = paramsPage
     ? parseInt(paramsPage, 10)
