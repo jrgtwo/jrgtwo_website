@@ -1,4 +1,5 @@
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
+import Link from 'next/link'
 
 export const MainHeading = () => {
   return (
@@ -8,7 +9,7 @@ export const MainHeading = () => {
       </Avatar>
 
       <h1 className="text-2xl p-4 font-[Cal_Sans] block md:hidden">
-        <a href="/">JonathanRayGarcia.com</a>
+        <Link href="/">JonathanRayGarcia.com</Link>
       </h1>
     </div>
   );

@@ -20,8 +20,10 @@ export default async function BlogLayout({ children }: PropsWithChildren) {
       <section className="py-full-section">
         <h2 className="hidden md:block text-center text-5xl font-[Cal_Sans]" style={{ 'textShadow': '#860202 0px 3px 0px, white 0px 2px 0px' }}>Jonathan's Explorations 🧑‍🚀 🚀</h2>
         <Separator className="my-8" />
-        <section className="flex gap-8 px-8">
-          <BlogSidebar posts={featuredPosts} />
+        <section className="flex flex-col-reverse  lg:flex-row gap-8">
+          <section className="w-[310px] px-4 lg:block">
+            <BlogSidebar posts={featuredPosts} />
+          </section>
           <section className="w-full">
             {children}
           </section>

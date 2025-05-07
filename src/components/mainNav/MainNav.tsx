@@ -1,4 +1,5 @@
 import { Separator } from "../ui/separator"
+import Link from 'next/link'
 import {
   Popover,
   PopoverContent,
@@ -8,9 +9,9 @@ import { buttonVariants } from "../ui/button"
 export const MainNav = () => {
   return (
     <menu className="flex md:gap-4" >
-      <li><a href="/#home" className={buttonVariants({ "variant": "link" })}>Home</a></li>
+      <li><Link href="/#home" className={buttonVariants({ "variant": "link" })}>Home</Link></li>
       <li><Separator orientation="vertical" /></li>
-      <li><a href="/#work" className={buttonVariants({ "variant": "link" })}>Work</a></li>
+      <li><Link href="/#work" className={buttonVariants({ "variant": "link" })}>Work</Link></li>
       <li><Separator orientation="vertical" /></li>
       <li>
         <Popover>
@@ -24,7 +25,7 @@ export const MainNav = () => {
         </Popover>
       </li >
       <li><Separator orientation="vertical" /></li>
-      <li><a href="/blog" className={buttonVariants({ "variant": "link" })}>Blog</a></li>
+      <li><Link href="/blog" className={buttonVariants({ "variant": "link" })}>Blog</Link></li>
     </menu >
   )
 }
