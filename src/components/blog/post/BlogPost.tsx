@@ -12,7 +12,7 @@ export default function BlogPost({ postId, post }) {
         {post.image && (
           <div className="p-8">
             <img src={post.image} alt="" />
-            <p>{post.image_description}</p>
+            <p className="italic">{post.image_description}</p>
           </div>
         )}
         <article className="flex flex-col gap-6">
