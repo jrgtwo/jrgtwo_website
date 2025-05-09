@@ -1,7 +1,7 @@
 
 import { Separator } from "@/components/ui/separator"
-import type { POSTS_PROP } from "./BlogSidebar"
-export default function FeaturedPosts({ posts }: { posts: POSTS_PROP[] | null }) {
+import type { POSTS_PROP } from "@/queries/blog/posts/getFeaturedPosts"
+export default function FeaturedPosts({ posts }: { posts: POSTS_PROP | null }) {
 
 
   return (
@@ -10,7 +10,7 @@ export default function FeaturedPosts({ posts }: { posts: POSTS_PROP[] | null })
       <Separator className="my-4" />
       <menu className="list-disc">
         {posts?.map((post) => (
-          <li key={`featured-post-${post.id}`}><a href={`/blog/post/${post.id}`}> {post.title}</a></li>
+          <li key={`featured-post-${post?.id}`}><a href={`/blog/post/${post?.id}`}> {post?.title}</a></li>
         ))}
       </menu>
     </>

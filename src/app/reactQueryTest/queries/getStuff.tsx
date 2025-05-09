@@ -4,5 +4,5 @@ export function getStuff(client: TypedSupabaseClient) {
   return client
     .from('Blog')
     .select('*')
-    .limit(5)
+    .limit(10)
 } 
