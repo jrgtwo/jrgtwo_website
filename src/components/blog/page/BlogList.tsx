@@ -6,6 +6,7 @@ export default function BlogList({ data }) {
     <>
       <h2 className="text-3xl font-[Cal_Sans] text-destructive">Latest Posts</h2>
       <Separator className="my-4" />
+
       {data?.map((post, index) => (
         <div key={`latest-posts-${post.id}`}>
           {index !== 0 && <Separator className="my-4" />}

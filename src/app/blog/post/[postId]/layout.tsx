@@ -8,7 +8,7 @@ export default async function PostLayout({ children, params }: { children: React
   const queryClient = new QueryClient()
   const supabase = await useSupabaseServer()
 
-  await prefetchQuery(queryClient, getPostById(supabase, postId))
+  await prefetchQuery(queryClient, getPostById(supabase, parseInt(postId, 10)))
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>

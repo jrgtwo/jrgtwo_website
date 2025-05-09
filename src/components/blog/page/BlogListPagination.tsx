@@ -1,4 +1,4 @@
-import { PAGE_OFFSET } from "@/app/blog/constants"
+import { PAGE_OFFSET } from "@/constants/constants"
 import {
   Pagination,
   PaginationContent,
