@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { MainHeader } from '@/components/mainHeader/MainHeader'
 import { MainFooter } from '@/components/mainFooter/MainFooter'
+import { ReactQueryClientProvider } from '@/components/providers/ReactQueryClientProvider'
+
 import '../index.css'
 
 export const metadata: Metadata = {
@@ -25,11 +27,13 @@ export default function RootLayout({
 
       <body>
         <div id="root">
-          <MainHeader />
-          <section className="w-11/12 max-w-[950px] lg:w-9/12 m-auto">
-            {children}
-          </section>
-          <MainFooter />
+          <ReactQueryClientProvider>
+            <MainHeader />
+            <section className="w-11/12 max-w-[950px] lg:w-9/12 m-auto">
+              {children}
+            </section>
+            <MainFooter />
+          </ReactQueryClientProvider>
         </div>
 
       </body>

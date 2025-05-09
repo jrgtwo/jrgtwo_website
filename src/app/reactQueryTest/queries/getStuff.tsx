@@ -5,4 +5,4 @@ export function getStuff(client: TypedSupabaseClient) {
     .from('Blog')
     .select('*')
     .limit(5)
-}
+} 
