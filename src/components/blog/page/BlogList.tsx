@@ -1,5 +1,6 @@
 import { Separator } from "@/components/ui/separator"
 import Link from 'next/link'
+import Image from "next/image"
 
 export default function BlogList({ data }) {
   return (
@@ -15,7 +16,11 @@ export default function BlogList({ data }) {
               <h3 className="font-[Cal_Sans] text-2xl">{post.title}</h3>
               <p className="font-[Roboto_Condensed] text-sm">{new Date(post.created_at).toLocaleDateString()}</p>
               <div className="flex gap-4 mt-4 p-4 items-center">
-                <img src={post.thumbnail} alt="" className="w-[100px]" />
+                <Image
+                  src={post.thumbnail}
+                  alt=""
+                  width={100}
+                  height={70} />
                 <p>{post.short_blurb}</p>
               </div>
             </Link>

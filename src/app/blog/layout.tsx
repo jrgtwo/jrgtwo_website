@@ -6,6 +6,8 @@ import { getPageById } from '@/queries/blog/page/getPageById'
 import { getCount } from '@/queries/blog/page/getCount'
 import BlogSidebar from "@/components/blog/sidebar/BlogSidebar"
 import { Separator } from "@/components/ui/separator"
+import Loading from '@/components/loading/Loading'
+import { Suspense } from 'react'
 
 export default async function BlogLayout({ children }: { children: React.ReactNode }) {
   const queryClient = new QueryClient()
@@ -23,7 +25,9 @@ export default async function BlogLayout({ children }: { children: React.ReactNo
         <section className="flex flex-col-reverse  lg:flex-row">
           <HydrationBoundary state={dehydrate(queryClient)}>
             <section className="min-w-[240px] max-w[240px] px-4 lg:block">
-              <BlogSidebar />
+              <Suspense fallback={<Loading />}>
+                <BlogSidebar />
+              </Suspense>
             </section>
             <section className=" flex-1 min-w-0">
               {children}

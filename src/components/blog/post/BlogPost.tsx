@@ -1,5 +1,6 @@
 import { PostMarkdown } from "./PostMarkdown";
 import Link from 'next/link'
+import Image from "next/image";
 
 export default function BlogPost({ postId, post }) {
 
@@ -11,8 +12,13 @@ export default function BlogPost({ postId, post }) {
         <p>{post.short_blurb}</p>
         {post.image && (
           <div className="p-8">
-            <img src={post.image} alt="" />
             <p className="italic">{post.image_description}</p>
+            <Image
+              src={post.image}
+              alt={post.image_description}
+              width={750}
+              height={500} />
+
           </div>
         )}
         <article className="flex flex-col gap-6">

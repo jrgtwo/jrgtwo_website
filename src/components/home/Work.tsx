@@ -3,8 +3,8 @@ import { Separator } from '@/components/ui/separator'
 import NBCLogo from './../../public/logos/NBC_logo.png';
 import DisneyLogo from './../../public/logos/DISNEY_logo.png'
 import NFLLogo from './../../public/logos/NFL_logo.png'
-
 import MGMLogo from '../../public/logos/MGM_logo.png'
+import Image from 'next/image';
 
 export const Work = ({ id }: { id: string }) => {
 
@@ -16,7 +16,12 @@ export const Work = ({ id }: { id: string }) => {
           <CardContent>
             <div className=" flex-col sm:flex-row flex gap-8 items-center">
               <div className="flex justify-center flex-1  bg-white rounded-lg">
-                <img src={NBCLogo.src} alt="NBC logo" className="max-h-[250px] scale-90" />
+                <Image
+                  src={NBCLogo.src}
+                  alt="NBC Logo"
+                  width={250}
+                  height={250}
+                  className="max-h-[250px] scale-90" />
               </div>
               <div className="flex-2">
                 <h4 className="font-[Cal_Sans] text-2xl">NBC.com</h4>
@@ -31,7 +36,12 @@ export const Work = ({ id }: { id: string }) => {
           <CardContent>
             <div className=" flex-col sm:flex-row flex gap-8 items-center">
               <div className="flex justify-center flex-1  bg-white rounded-lg">
-                <img src={DisneyLogo.src} alt="Disney logo" className="max-h-[250px]" />
+                <Image
+                  src={DisneyLogo.src}
+                  alt="NBC Logo"
+                  width={250}
+                  height={250}
+                  className="max-h-[250px] scale-90" />
               </div>
               <div className="flex-2">
                 <h4 className="font-[Cal_Sans] text-2xl">Disney/Disney Streaming</h4>
@@ -46,7 +56,12 @@ export const Work = ({ id }: { id: string }) => {
           <CardContent>
             <div className=" flex-col sm:flex-row flex gap-8 items-center">
               <div className="flex justify-center flex-1  bg-white rounded-lg overflow-hidden">
-                <img src={NFLLogo.src} alt="NFL logo" className="max-h-[250px] scale-90" />
+                <Image
+                  src={NFLLogo.src}
+                  alt="NBC Logo"
+                  width={190}
+                  height={250}
+                  className="max-h-[250px] scale-90" />
               </div>
               <div className="flex-2">
                 <h4 className="font-[Cal_Sans] text-2xl">National Footbal League/NFL.com</h4>
@@ -61,7 +76,12 @@ export const Work = ({ id }: { id: string }) => {
           <CardContent>
             <div className=" flex-col sm:flex-row flex gap-8 items-center">
               <div className="flex justify-center flex-1   bg-white rounded-lg">
-                <img src={MGMLogo.src} alt="MGM logo" className="max-w-[250px] scale-90" />
+                <Image
+                  src={MGMLogo.src}
+                  alt="NBC Logo"
+                  width={250}
+                  height={250}
+                  className="max-h-[250px] scale-90" />
               </div>
               <div className="flex-2">
                 <h4 className="font-[Cal_Sans] text-2xl">Metro-Goldwyn-Mayer/MGM.com</h4>
