@@ -6,6 +6,7 @@ import { useQuery } from '@supabase-cache-helpers/postgrest-react-query'
 import BlogPost from '@/components/blog/post/BlogPost'
 import { getPostById } from "@/queries/blog/posts/getPostById"
 import Loading from '@/components/loading/Loading'
+import BreadCrumbMenu from '@/components/blog/post/BreadCrumbMenu'
 
 export default function PostPage() {
   const { postId } = useParams<{ postId: string }>()
@@ -14,6 +15,7 @@ export default function PostPage() {
   return (
     <>
       <Suspense fallback={<Loading />}>
+        <BreadCrumbMenu routeName={post?.title} />
         <BlogPost post={post} postId={postId} />
       </Suspense >
     </>
