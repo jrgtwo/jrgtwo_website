@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { MainHeader } from '@/components/mainHeader/MainHeader'
 import { MainFooter } from '@/components/mainFooter/MainFooter'
 import { ReactQueryClientProvider } from '@/components/providers/ReactQueryClientProvider'
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import '../index.css'
 
@@ -31,6 +32,7 @@ export default function RootLayout({
             <MainHeader />
             <section className="w-11/12 max-w-[950px] lg:w-9/12 m-auto">
               {children}
+              <SpeedInsights />
             </section>
             <MainFooter />
           </ReactQueryClientProvider>
