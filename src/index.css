@@ -3,7 +3,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  
+
   --background: oklch(0.129 0.042 264.695);
   --foreground: oklch(0.984 0.003 247.858);
   --card: oklch(0.208 0.042 265.755);
@@ -84,6 +84,9 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  #root {
+    background: radial-gradient(ellipse at top, rgba(90, 93, 103, 0.3), rgb(2, 6, 24));
   }
   p{
     color: rgb(205, 205, 205);
