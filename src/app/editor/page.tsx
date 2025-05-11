@@ -1,15 +1,33 @@
 'use client'
-import { useState, useCallback, type ChangeEventHandler, type FormEventHandler } from 'react'
+import { useState, useCallback, useEffect, type ChangeEventHandler, type MouseEvent } from 'react'
 import { PostMarkdown } from "@/components/blog/post/PostMarkdown";
 import { Textarea } from "@/components/ui/textarea"
 
+type currentSelect = {
+  start: number,
+  end: number
+}
+
 export default function EditorPage() {
   const [post, setPost] = useState('')
-
+  const [currentSelection, setCurrentSelection] = useState<currentSelect | null>(null)
   const handleChange: ChangeEventHandler<HTMLTextAreaElement> = useCallback((event) => {
     const text = event.target.value
     setPost(text)
   }, [])
+
+
+  const handleMouseUp = (event: MouseEvent<HTMLTextAreaElement>) => {
+    const target = event.currentTarget
+    const end = target.selectionEnd
+    const start = target.selectionStart
+    debugger
+    setCurrentSelection({ start, end })
+  }
+
+  useEffect(() => {
+    console.log(currentSelection?.start, (currentSelection?.start || 0) + (currentSelection?.end || 0))
+  }, [currentSelection])
 
   return (
     <>
@@ -18,6 +36,7 @@ export default function EditorPage() {
         <section className="flex-auto">
           <p>Markdown Input</p>
           <Textarea
+            onMouseUp={handleMouseUp}
             placeholder="Enter Markdown here"
             onChange={handleChange}
             className="border-1 border-red-50 rounded-2xl p-4  h-80" />

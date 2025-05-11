@@ -8,7 +8,7 @@ import {
 import { buttonVariants } from "../ui/button"
 export const MainNav = () => {
   return (
-    <menu className="flex md:gap-4" >
+    <menu className="flex md:gap-4 sm:mr-[2vw]  lg:mr-[12vw]" >
       <li><Link href="/#home" className={buttonVariants({ "variant": "link" })}>Home</Link></li>
       <li><Separator orientation="vertical" /></li>
       <li><Link href="/#work" className={buttonVariants({ "variant": "link" })}>Work</Link></li>

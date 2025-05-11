@@ -4,6 +4,7 @@ import { MainFooter } from '@/components/mainFooter/MainFooter'
 import { ReactQueryClientProvider } from '@/components/providers/ReactQueryClientProvider'
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
+
 import '../index.css'
 
 export const metadata: Metadata = {
@@ -37,7 +38,6 @@ export default function RootLayout({
             <MainFooter />
           </ReactQueryClientProvider>
         </div>
-
       </body>
 
     </html>
