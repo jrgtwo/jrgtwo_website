@@ -35,6 +35,7 @@ export async function generateMetadata({ params }) {
       title: post.title,
       description: post.short_blurb,
       images: [post.image],
+      type: 'article'
     },
   };
 }
