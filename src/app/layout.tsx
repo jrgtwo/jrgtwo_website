@@ -3,7 +3,7 @@ import { MainHeader } from '@/components/mainHeader/MainHeader'
 import { MainFooter } from '@/components/mainFooter/MainFooter'
 import { ReactQueryClientProvider } from '@/components/providers/ReactQueryClientProvider'
 import { SpeedInsights } from '@vercel/speed-insights/next';
-
+import { PostHogProvider } from '@/components/providers/PostHogProvider';
 
 import '../index.css'
 
@@ -32,7 +32,9 @@ export default function RootLayout({
           <ReactQueryClientProvider>
             <MainHeader />
             <section className="w-11/12 max-w-[950px] lg:w-9/12 m-auto">
-              {children}
+              <PostHogProvider>
+                {children}
+              </PostHogProvider>
               <SpeedInsights />
             </section>
             <MainFooter />
