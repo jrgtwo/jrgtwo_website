@@ -2,8 +2,11 @@ import { PostMarkdown } from "./PostMarkdown";
 import Link from 'next/link'
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
+import type { Tables } from "@/types/db/database.types";
 
-export default function BlogPost({ postId, post }) {
+type POST = Tables<'Blog'> | undefined | null
+
+export default function BlogPost({ postId, post }: { postId: string, post: POST }) {
 
   return (
     <section className="mt-4">
@@ -14,19 +17,20 @@ export default function BlogPost({ postId, post }) {
       <Separator />
 
       <div className="p-4">
-        <p>{post.short_blurb}</p>
-        {post.image && (
+        <p>{post?.short_blurb}</p>
+        {post?.image && (
           <div className="p-8">
             <Image
-              src={post.image}
-              alt={post.image_description || ""}
+              src={post?.image}
+              alt={post?.image_description || ""}
+              priority
               width={750}
               height={500} />
-            <p className="italic">{post.image_description}</p>
+            <p className="italic">{post?.image_description}</p>
           </div>
         )}
         <article className="flex flex-col gap-6">
-          <PostMarkdown post={post.post} />
+          <PostMarkdown post={post?.post} />
         </article>
       </div>
     </section >

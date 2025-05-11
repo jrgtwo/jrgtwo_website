@@ -5,22 +5,39 @@ import { createClient } from '@/lib/db/supabaseBrowser'
 import { getPostById } from "@/queries/blog/posts/getPostById"
 import { getLatestPosts } from '@/queries/blog/posts/getLatestPosts'
 
-// export async function generateStaticParams() {
-//   const supabase = createClient();
+export async function generateStaticParams() {
+  const supabase = createClient();
 
-//   const { data: posts, error } = await getLatestPosts(supabase)
+  const { data: posts, error } = await getLatestPosts(supabase)
 
-//   if (error) return
+  if (error) return
 
 
-//   const mapped = posts.map((post) => {
-//     return ({
-//       postId: String(post.id),
-//     })
-//   })
+  const mapped = posts.map((post) => {
+    return ({
+      postId: String(post.id),
+    })
+  })
 
-//   return mapped
-// }
+  return mapped
+}
+
+export async function generateMetadata({ params }) {
+  const { postId } = await params
+  const queryClient = new QueryClient()
+  const supabase = await useSupabaseServer()
+  const { data: post } = await fetchQuery(queryClient, getPostById(supabase, parseInt(postId, 10)))
+
+  if (!post) return {}
+  return {
+    title: post.title,
+    openGraph: {
+      title: post.title,
+      description: post.short_blurb,
+      images: [post.image],
+    },
+  };
+}
 
 export default async function PostLayout({ children, params }: { children: React.ReactNode, params: Promise<{ postId: string }> }) {
   const { postId } = await params

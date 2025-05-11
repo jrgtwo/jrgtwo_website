@@ -26,6 +26,7 @@ export default function EditorPage() {
   }
 
   useEffect(() => {
+    // TODO: lets figure something out soon or get rid of this 5/11/25
     console.log(currentSelection?.start, (currentSelection?.start || 0) + (currentSelection?.end || 0))
   }, [currentSelection])
 
