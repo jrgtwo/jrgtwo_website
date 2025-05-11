@@ -19,7 +19,7 @@ export default function BlogPost({ postId, post }) {
           <div className="p-8">
             <Image
               src={post.image}
-              alt={post.image_description}
+              alt={post.image_description || ""}
               width={750}
               height={500} />
             <p className="italic">{post.image_description}</p>

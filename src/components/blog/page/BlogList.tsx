@@ -19,8 +19,8 @@ export default function BlogList({ data }) {
                 <Image
                   src={post.thumbnail}
                   alt=""
-                  width={100}
-                  height={70} />
+                  width={200}
+                  height={140} />
                 <p>{post.short_blurb}</p>
               </div>
             </Link>
