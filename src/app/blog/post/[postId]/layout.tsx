@@ -24,6 +24,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { postId } = await params
+
   const queryClient = new QueryClient()
   const supabase = await useSupabaseServer()
   const { data: post } = await fetchQuery(queryClient, getPostById(supabase, parseInt(postId, 10)))
@@ -35,7 +36,8 @@ export async function generateMetadata({ params }) {
       title: post.title,
       description: post.short_blurb,
       images: [post.image],
-      type: 'article'
+      type: 'article',
+      url: `${process.env.NEXT_PUBLIC_SHARE_HOST}/blog/post/${post.id}`
     },
   };
 }
