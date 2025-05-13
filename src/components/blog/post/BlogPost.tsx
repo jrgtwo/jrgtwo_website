@@ -19,7 +19,7 @@ export default function BlogPost({ postId, post }: { postId: string, post: POST 
       <Separator />
 
       <div className="p-4">
-        <p>{post?.short_blurb}</p>
+        <blockquote className="text-center text-xl italic">{post?.short_blurb}</blockquote>
         {post?.image && (
           <div className="p-8">
             <Image

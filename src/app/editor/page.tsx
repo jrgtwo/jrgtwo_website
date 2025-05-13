@@ -21,7 +21,7 @@ export default function EditorPage() {
     const target = event.currentTarget
     const end = target.selectionEnd
     const start = target.selectionStart
-    debugger
+
     setCurrentSelection({ start, end })
   }
 
