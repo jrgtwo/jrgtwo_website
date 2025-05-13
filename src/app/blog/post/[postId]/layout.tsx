@@ -39,8 +39,16 @@ export async function generateMetadata({ params }) {
       type: 'article',
       url: `${process.env.NEXT_PUBLIC_SHARE_HOST}/blog/post/${post.id}`
     },
-  };
-}
+    twitter: {
+      card: post.image_description,
+      title: post.title,
+      description: post.short_blurb,
+      creator: '@jonathanraygarcia',
+      images: [post.image]
+    }
+  }
+};
+
 
 export default async function PostLayout({ children, params }: { children: React.ReactNode, params: Promise<{ postId: string }> }) {
   const { postId } = await params
