@@ -42,7 +42,6 @@ export async function generateMetadata({ params }) {
       card: post.image_description,
       title: post.title,
       description: post.short_blurb,
-      creator: '@jonathanraygarcia.bsky.social',
       images: [post.image]
     }
   }
