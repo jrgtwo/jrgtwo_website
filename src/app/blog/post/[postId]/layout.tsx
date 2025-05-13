@@ -36,14 +36,13 @@ export async function generateMetadata({ params }) {
       title: post.title,
       description: post.short_blurb,
       images: [post.image],
-      type: 'article',
       url: `${process.env.NEXT_PUBLIC_SHARE_HOST}/blog/post/${post.id}`
     },
     twitter: {
       card: post.image_description,
       title: post.title,
       description: post.short_blurb,
-      creator: '@jonathanraygarcia',
+      creator: '@jonathanraygarcia.bsky.social',
       images: [post.image]
     }
   }
