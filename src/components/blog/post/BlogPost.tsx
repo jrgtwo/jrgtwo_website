@@ -13,7 +13,7 @@ export default function BlogPost({ postId, post }: { postId: string, post: POST 
     <section className="mt-4">
       <a href={`https://bsky.app/intent/compose?text=${encodeURIComponent(post.title)}`} target="_blank">Share</a>
       <Link href={`/blog/post/${postId}`}>
-        <h2 className="p-8 text-7xl text-center font-[Cal_Sans] text-shadow-[0px_0px_2px_red,-1px_1px_2px_white,-2px_2px_2px_red,-3px_3px_1px_white]">{post.title}</h2>
+        <h2 className="py-8 text-5xl md:text-7xl text-center font-[Cal_Sans] text-shadow-[0px_0px_2px_red,-1px_1px_2px_white,-2px_2px_2px_red,-3px_3px_1px_white]">{post.title}</h2>
       </Link>
       {/* <p>{new Date(post.created_at).getMonth()}</p> */}
       <Separator />
