@@ -12,26 +12,23 @@ export default async function PostPage({ params }: { params: { postId: string } 
   const queryClient = new QueryClient()
   const supabase = await useSupabaseServer()
 
-  const code = `console.log('boom');`
+  const code = `const myCoolPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('Delayed Value');
+  }, 2000);
+});
+
+myCoolPromise.then((val) => {
+  console.log(val);
+  // Logs out Delayed Value after 2000 milliseconds
+});`;
   const { data: post } = await fetchQuery(queryClient, getPostById(supabase, parseInt(postId, 10)))
   return (
     <>
       <BreadCrumbMenu routeName={post?.title} />
       <BlogPost post={post} postId={postId} />
       <MDXRemote
-        source={`<Playground 
-          files={{
-            '/index.js': {
-              code: "console.log('boom');",
-              active: true,
-              hidden: false,
-            },
-            '/index.html': {
-              code: '<script src="/index.js"></script>',
-              active: false,
-              hidden: true,
-            },
-          }}/>`}
+        source={`<Playground code="${code}"/>`}
         components={{
           // Specify the Playground here:
           Playground,

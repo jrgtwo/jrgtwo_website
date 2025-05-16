@@ -9,18 +9,32 @@ import {
 import { nightOwl } from '@codesandbox/sandpack-themes';
 import IdeCodeDispay from "@/components/blog/post/IdeCodeDisplay";
 
-export default function Playground({ files, preset = "static" }) {
+export default function Playground({ code = '' }) {
   debugger
   return (
 
     <IdeCodeDispay>
       <SandpackProvider
         template={'static'}
-        theme={nightOwl} files={files}
+        theme={nightOwl} //files={files}
         options={{
           layout: "console", // preview | tests | console
-
+          autorun: false,
           showConsole: true,
+        }}
+
+        files={{
+          '/index.js': {
+            code: code,
+            active: true,
+            hidden: false,
+            readOnly: true,
+          },
+          '/index.html': {
+            code: '<script src="/index.js"></script>',
+            active: false,
+            hidden: true,
+          },
         }}
       >
         <div style={{}}>
