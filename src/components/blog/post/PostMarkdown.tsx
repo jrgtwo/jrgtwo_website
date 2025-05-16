@@ -1,7 +1,7 @@
 import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism"
-import IdeCodeDispay from './IdeCodeDisplay'
+import IdeCodeDisplay from './IdeCodeDisplay'
 import './post-styles.css'
 
 export const PostMarkdown = ({ post }) => {
@@ -11,7 +11,7 @@ export const PostMarkdown = ({ post }) => {
         code({ className, children, ...rest }) {
           const match = /language-(\w+)/.exec(className || "");
           return match ? (
-            <IdeCodeDispay
+            <IdeCodeDisplay
               copyText={String(children)}>
 
               <SyntaxHighlighter
@@ -22,7 +22,7 @@ export const PostMarkdown = ({ post }) => {
               >
                 {String(children)}
               </SyntaxHighlighter>
-            </IdeCodeDispay>
+            </IdeCodeDisplay>
           ) : (
             <code {...rest} className={className}>
               {children}

@@ -1,11 +1,13 @@
-'use client'
 
 import Link from 'next/link'
 import Image from "next/image";
-import { Toaster } from "@/components/ui/sonner"
+// import { Toaster } from "@/components/ui/sonner"
 import { Separator } from "@/components/ui/separator";
 import type { Tables } from "@/types/db/database.types";
 import { PostMarkdown } from "./PostMarkdown";
+import { MDXRemote } from 'next-mdx-remote-client/rsc'
+import Playground from './ReactSandbox'
+
 
 type POST = Tables<'Blog'> | undefined | null
 
@@ -34,11 +36,16 @@ export default function BlogPost({ postId, post }: { postId: string, post: POST 
           </div>
         )}
         <article className="flex flex-col gap-6">
-          <PostMarkdown post={post?.post} />
-
+          {/* <PostMarkdown post={post?.post} /> */}
+          <MDXRemote
+            source={post?.post || ''}
+            components={{
+              // Specify the Playground here:
+              Playground,
+            }} />
         </article>
       </div>
-      <Toaster />
+      {/* <Toaster /> */}
     </section >
   )
 }

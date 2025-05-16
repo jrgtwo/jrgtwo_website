@@ -7,28 +7,26 @@ import {
   SandpackPreview,
 } from "@codesandbox/sandpack-react";
 import { nightOwl } from '@codesandbox/sandpack-themes';
-import IdeCodeDispay from "@/components/blog/post/IdeCodeDisplay";
+import IdeCodeDisplay from "@/components/blog/post/IdeCodeDisplay";
 
-export default function Playground({ code = '' }) {
-  debugger
+export default function Playground({ data = {} }) {
+
   return (
 
-    <IdeCodeDispay>
+    <IdeCodeDisplay>
       <SandpackProvider
         template={'static'}
-        theme={nightOwl} //files={files}
+        theme={nightOwl}
         options={{
-          layout: "console", // preview | tests | console
           autorun: false,
-          showConsole: true,
         }}
 
         files={{
           '/index.js': {
-            code: code,
+            code: data?.code,
             active: true,
             hidden: false,
-            readOnly: true,
+            //  readOnly: true,
           },
           '/index.html': {
             code: '<script src="/index.js"></script>',
@@ -43,6 +41,6 @@ export default function Playground({ code = '' }) {
           <SandpackConsole standalone={true} />
         </div>
       </SandpackProvider>
-    </IdeCodeDispay>
+    </IdeCodeDisplay >
   )
 }
