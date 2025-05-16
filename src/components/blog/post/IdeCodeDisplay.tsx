@@ -2,7 +2,7 @@ import { useState, useCallback } from 'react'
 import { toast } from "sonner"
 import { Copy } from "lucide-react"
 
-export default function IdeCodeDispay({ children, copyText }: { children: React.ReactNode, copyText: string }) {
+export default function IdeCodeDispay({ children, copyText }: { children: React.ReactNode, copyText?: string }) {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleOpen = useCallback(() => {

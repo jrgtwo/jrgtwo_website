@@ -1,9 +1,11 @@
-import { PostMarkdown } from "./PostMarkdown";
+'use client'
+
 import Link from 'next/link'
 import Image from "next/image";
+import { Toaster } from "@/components/ui/sonner"
 import { Separator } from "@/components/ui/separator";
 import type { Tables } from "@/types/db/database.types";
-
+import { PostMarkdown } from "./PostMarkdown";
 
 type POST = Tables<'Blog'> | undefined | null
 
@@ -33,8 +35,10 @@ export default function BlogPost({ postId, post }: { postId: string, post: POST 
         )}
         <article className="flex flex-col gap-6">
           <PostMarkdown post={post?.post} />
+
         </article>
       </div>
+      <Toaster />
     </section >
   )
 }
