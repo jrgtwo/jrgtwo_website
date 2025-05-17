@@ -98,3 +98,11 @@
     width: 100%;
   }
 }
+
+.editor-wrapper {
+  &.view-only {
+    button {
+      display: none;
+    }
+  }
+}

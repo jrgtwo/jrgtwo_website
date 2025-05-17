@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import type { Tables } from "@/types/db/database.types";
 import { MDXRemote } from 'next-mdx-remote-client/rsc'
-import Playground from './ReactSandbox'
+import Playground from './Playground'
 import './post-styles.css'
 
 type POST = Tables<'Blog'> | undefined | null
