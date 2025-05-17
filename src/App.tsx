@@ -11,9 +11,6 @@ export function App() {
       <Home.Skills id="skills" />
       <Separator className="my-4" />
       <Home.Work id="work" />
-      <Separator className="my-4" id="contact" />
-      <Home.Contact id="contact" />
-      <Separator className="my-4" />
     </>
   )
 }

@@ -12,27 +12,31 @@ type POST = Tables<'Blog'> | undefined | null
 export default function BlogPost({ postId, post }: { postId: string, post: POST }) {
 
   return (
-    <section className="mt-4">
-      <a href={`https://bsky.app/intent/compose?text=${encodeURI(`${post?.title}: ${process.env.NEXT_PUBLIC_SHARE_HOST}/blog/post/${post?.id}`)}`} target="_blank">Share</a>
-      <Link href={`/blog/post/${postId}`}>
-        <h2 className="py-8 text-5xl md:text-7xl text-center font-[Cal_Sans] text-shadow-[0px_0px_2px_red,-1px_1px_2px_white,-2px_2px_2px_red,-3px_3px_1px_white]">{post.title}</h2>
-      </Link>
+    <section className="mt-8">
+
       <Separator />
+      <Link href={`/blog/post/${postId}`}>
+        <h2 className="py-8 text-5xl md:text-7xl text-center font-[Cal_Sans] ">{post?.title}</h2>
+        <blockquote className="text-center text-xl italic">{post?.short_blurb}</blockquote>
+      </Link>
+      {/* <Separator /> */}
 
       <div className="p-4">
-        <blockquote className="text-center text-xl italic">{post?.short_blurb}</blockquote>
+
         {post?.image && (
-          <div className="p-8">
-            <Image
-              src={post?.image}
-              alt={post?.image_description || ""}
-              priority
-              width={750}
-              height={500} />
-            <p className="italic">{post?.image_description}</p>
+          <div className="p-8" >
+            <div className="m-auto w-fit">
+              <Image
+                src={post?.image}
+                alt={post?.image_description || ""}
+                priority
+                width={750}
+                height={500} />
+              <p className="italic">{post?.image_description}</p>
+            </div>
           </div>
         )}
-        <article className="flex flex-col gap-6">
+        <article className="flex flex-col gap-6 blog-post-article">
           <MDXRemote
             source={post?.post || ''}
             components={{

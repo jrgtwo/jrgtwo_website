@@ -10,7 +10,7 @@ import Link
   from "next/link"
 export default function BreadCrumbMenu({ routeName = 'Blog Post' }: { routeName: string | undefined }) {
   return (
-    <Breadcrumb>
+    <Breadcrumb className="pl-4">
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink asChild={true}>

@@ -10,7 +10,7 @@ export const Work = ({ id }: { id: string }) => {
 
   return (
     <section id={id} className="py-full-section px-0 lg:px-full-section scroll-mt-[85px]">
-      <h2 className="text-3xl font-[Cal_Sans] text-destructive" style={{ 'textShadow': 'white 0px 0.005ch 0px, rgb(134, 2, 2) 1px 1px 0px' }}>What I've Done</h2>
+      <h2 className="pl-8 text-3xl font-[Cal_Sans] text-destructive" style={{ 'textShadow': 'white 0px 0.005ch 0px, rgb(134, 2, 2) 1px 1px 0px' }}>What I've Done</h2>
       <div className="px-4">
         <Card className="mt-8">
           <CardContent>

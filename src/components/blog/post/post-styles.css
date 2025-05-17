@@ -1,4 +1,7 @@
 .ide-wrapper {
+  width: 100%;
+  max-width: 42em;
+  margin: auto;
   padding: 16px 6px 8px 6px;
   background: #424242;
   border-radius: 10px;
@@ -80,4 +83,18 @@
 .sp-wrapper {
   border-radius: 10px!important;
   overflow:hidden!important;
+}
+
+.blog-post-article {
+  p code {
+    background: #303030;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #ffffff;
+  }
+  p {
+    max-width: 42em;
+    margin: auto;
+    width: 100%;
+  }
 }
