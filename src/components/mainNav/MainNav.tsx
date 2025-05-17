@@ -9,7 +9,7 @@ import { buttonVariants } from "../ui/button"
 export const MainNav = () => {
   return (
     <menu className="flex sm:mr-[2vw]  lg:mr-[12vw]" >
-      <li><Link href="/#home" className={buttonVariants({ "variant": "link" })}>Home</Link></li>
+      <li><Link href="/#home" className={buttonVariants({ "variant": "nav" })}>Home</Link></li>
       <li><Separator orientation="vertical" /></li>
       <li><Link href="/#work" className={buttonVariants({ "variant": "link" })}>Work</Link></li>
       <li><Separator orientation="vertical" /></li>

@@ -8,8 +8,10 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination"
 
-export default function BlogListPagination({ count, normalizedPage }) {
-
+export default function BlogListPagination({ count, normalizedPage }: { count: number | null, normalizedPage: number }) {
+  if (!count) {
+    return null
+  }
   const pageCount = Math.ceil(count / PAGE_OFFSET)
   const paginationArray = Array.from({ length: pageCount }).fill(1)
 

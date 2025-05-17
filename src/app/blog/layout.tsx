@@ -19,6 +19,7 @@ export default async function BlogLayout({ children }: { children: React.ReactNo
     <>
       <section className="py-full-section">
         <h2 className=" text-center text-5xl font-[Cal_Sans]" style={{ 'textShadow': '#860202 0px 3px 0px, white 0px 2px 0px' }}>Jonathan's Explorations 🧑‍🚀 </h2>
+        <p className="text-center">A safe place to learn, explore and share what I've learned and what I'm intereseted in.</p>
         <Separator className="my-8" />
         <section className="flex flex-col-reverse  lg:flex-row">
           <HydrationBoundary state={dehydrate(queryClient)}>
