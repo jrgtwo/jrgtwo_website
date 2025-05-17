@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/breadcrumb"
 import Link
   from "next/link"
-export default function BreadCrumbMenu({ routeName }) {
+export default function BreadCrumbMenu({ routeName = 'Blog Post' }: { routeName: string | undefined }) {
   return (
     <Breadcrumb>
       <BreadcrumbList>

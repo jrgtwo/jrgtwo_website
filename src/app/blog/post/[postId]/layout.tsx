@@ -22,7 +22,7 @@ export async function generateStaticParams() {
   return mapped
 }
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params }: { params: Promise<{ postId: string }> }) {
   const { postId } = await params
 
   const queryClient = new QueryClient()

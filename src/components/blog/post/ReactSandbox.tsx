@@ -1,15 +1,13 @@
-// import { Sandpack } from "@codesandbox/sandpack-react";
 'use client'
 import {
   SandpackProvider,
   SandpackCodeEditor,
   SandpackConsole,
-  SandpackPreview,
 } from "@codesandbox/sandpack-react";
 import { nightOwl } from '@codesandbox/sandpack-themes';
 import IdeCodeDisplay from "@/components/blog/post/IdeCodeDisplay";
 
-export default function Playground({ data = {} }) {
+export default function Playground({ data = {} }: { data?: { code?: string } }) {
 
   return (
 
@@ -20,13 +18,12 @@ export default function Playground({ data = {} }) {
         options={{
           autorun: false,
         }}
-
         files={{
           '/index.js': {
-            code: data?.code,
+            code: data?.code || '',
             active: true,
             hidden: false,
-            //  readOnly: true,
+            readOnly: true,
           },
           '/index.html': {
             code: '<script src="/index.js"></script>',
@@ -37,8 +34,10 @@ export default function Playground({ data = {} }) {
       >
         <div style={{}}>
           <SandpackCodeEditor />
-          {/* <SandpackPreview /> */}
-          <SandpackConsole standalone={true} />
+          <div>
+            <h3 className="p-2 font-bold text-l">Console:</h3>
+            <SandpackConsole standalone={true} className="min-h-16" />
+          </div>
         </div>
       </SandpackProvider>
     </IdeCodeDisplay >
