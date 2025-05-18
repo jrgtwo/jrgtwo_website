@@ -9,33 +9,45 @@
   border: 1px solid #757575;
   .open-button {
     &:hover {
-      cursor: pointer;
+      /* cursor: pointer; */
     }
     display:block;
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background: #24c840;
-    margin-left: 4px;
-    margin-top: -6px;
+    margin-left: 8px;
+    margin-top: -14px;
   }
   .ide-header {
     height: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
   .close-button {
     &:hover {
-      cursor: pointer;
+      /* cursor: pointer; */
     }
     display: block;
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background: #ff5f57;
-    margin-left: 4px;
-    margin-top: -6px;
+    margin-left: 8px;
+    margin-top: -14px;
+  }
+   .minimize-button {
+    &:hover {
+      /* cursor: pointer; */
+    }
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #febc2e;
+    margin-left: 8px;
+    margin-top: -14px;
   }
   .copy-button {
     width: 20px;
@@ -78,6 +90,11 @@
       min-height: 20vw;
     }
   }
+}
+
+.sp-layout {
+  display: block!important;
+  width: 100%!important;
 }
 
 .sp-wrapper {

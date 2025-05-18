@@ -1,6 +1,7 @@
 'use client'
 import {
   SandpackProvider,
+  SandpackLayout,
   SandpackCodeEditor,
   SandpackPreview,
   SandpackConsole,
@@ -47,22 +48,24 @@ export default function Playground({
           },
         }}
       >
-        <div>
-          <div className={`editor-wrapper ${(viewOnly || (!showConsole && !showPreview  )) ? 'view-only' : ''}`}>
-            <SandpackCodeEditor showLineNumbers={true} />
-          </div>
+        <SandpackLayout>
           <div>
-            {showPreview && (
-              <SandpackPreview />
-            )}
-            {showConsole && (
-              <>
-                <h3 className="p-2 font-bold text-l">Console:</h3>
-                <SandpackConsole standalone={!showPreview} className="min-h-20 max-h-20" />
-              </>
-            )}
+            <div className={`editor-wrapper`}>
+              <SandpackCodeEditor showRunButton={!(viewOnly || (!showConsole && !showPreview))} showLineNumbers={true} />
+            </div>
+            <div>
+              {showPreview && (
+                <SandpackPreview />
+              )}
+              {showConsole && (
+                <>
+                  <h3 className="p-2 font-bold text-l">Console:</h3>
+                  <SandpackConsole standalone={!showPreview} className="min-h-20 max-h-20" />
+                </>
+              )}
+            </div>
           </div>
-        </div>
+        </SandpackLayout>
       </SandpackProvider>
     </IdeCodeDisplay >
   )
