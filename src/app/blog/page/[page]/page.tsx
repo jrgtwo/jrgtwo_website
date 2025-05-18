@@ -16,11 +16,11 @@ export default function BlogPage() {
   const { data } = useQuery(getPageById(supabase, normalizedPage))
   const { count } = useQuery(getCount(supabase))
   return (
-    <>
+    <div className="w-full md:w-[48em] m-auto">
       <BlogList data={data} />
       <BlogListPagination
         count={count}
         normalizedPage={normalizedPage} />
-    </>
+    </div>
   )
 }
