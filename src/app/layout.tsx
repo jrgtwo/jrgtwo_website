@@ -4,7 +4,7 @@ import { MainFooter } from '@/components/mainFooter/MainFooter'
 import { ReactQueryClientProvider } from '@/components/providers/ReactQueryClientProvider'
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { PostHogProvider } from '@/components/providers/PostHogProvider';
-
+import Favicon from '@/assets/favicon.ico'
 import '../index.css'
 
 export const metadata: Metadata = {
@@ -20,6 +20,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="shortcut icon" href={Favicon.src} type="image/x-icon" />
+        <link rel="icon" href={Favicon.src} type="image/x-icon" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></link>
