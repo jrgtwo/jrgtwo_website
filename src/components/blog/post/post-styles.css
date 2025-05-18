@@ -103,7 +103,7 @@
 }
 
 .blog-post-article {
-  p code {
+  p code, li code {
     background: #303030;
     padding: 4px 8px;
     border-radius: 4px;
@@ -126,6 +126,8 @@
 
 ul {
   padding: 16px;
+  width: 38em;
+  margin: auto;
   li {
     list-style: disc;
     line-height: 2;
