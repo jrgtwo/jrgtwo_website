@@ -1,5 +1,7 @@
+import Link from 'next/link'
 import { Separator } from '@/components/ui/separator'
 import { Home } from '@/components/home/Home'
+
 
 export const MainFooter = () => {
   return (
@@ -8,7 +10,7 @@ export const MainFooter = () => {
       <Separator className="my-4" id="contact" />
       <Home.Contact id="contact" />
       <section className="py-full-section px-0 lg:px-full-section scroll-mt-[85px] mx-auto text-center">
-        <h2 className="text-2xl font-[Cal_Sans] text-destructive">JonathanRayGarcia.com</h2>
+        <Link href="/"><h2 className="text-2xl font-[Cal_Sans] text-destructive">JonathanRayGarcia.com</h2></Link>
         <h3 className="text-1xl font-[Cal_Sans]">Thanks for stopping by!</h3>
       </section>
       <Separator className="my-4" />

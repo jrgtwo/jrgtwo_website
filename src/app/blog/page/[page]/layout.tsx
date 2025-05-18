@@ -17,7 +17,7 @@ export default async function PageLayout({ children, params }: { children: React
   await prefetchQuery(queryClient, getCount(supabase))
 
   return (
-    
+
     <HydrationBoundary state={dehydrate(queryClient)}>
       {children}
     </HydrationBoundary >

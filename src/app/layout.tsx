@@ -26,7 +26,7 @@ export default function RootLayout({
       </head>
 
       <body>
-        <div id="root">
+        <div id="root" className="pt-[120px] md:pt-[100px]">
           <ReactQueryClientProvider>
             <MainHeader />
             <section className="w-11/12 max-w-[950px] lg:w-9/12 m-auto">

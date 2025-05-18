@@ -19,7 +19,7 @@ export default function BlogList({ data }: { data: POSTS_PROP }) {
               <div className="flex flex-col md:flex-row gap-4 mt-4 p-4 items-center">
                 {post.thumbnail && (
                   <Image
-                    className="w-full"
+                    className="w-full md:max-w-[200px]"
                     src={post.thumbnail}
                     alt=""
                     width={200}
