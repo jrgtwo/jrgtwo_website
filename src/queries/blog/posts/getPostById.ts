@@ -5,6 +5,7 @@ export function getPostById(client: TypedSupabaseClient, postId: number) {
     .from('Blog')
     .select('*')
     .eq('id', postId)
+    .filter('published', 'eq', true)
     .limit(1)
     .single()
 } 

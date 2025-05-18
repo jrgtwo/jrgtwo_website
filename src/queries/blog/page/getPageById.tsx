@@ -10,5 +10,6 @@ export function getPageById(client: TypedSupabaseClient, page: number) {
     .from('Blog')
     .select('*')
     .order('created_at', { ascending: false })
+    .filter('published', 'eq', true)
     .range(rangeFrom, rangeTo)
 } 

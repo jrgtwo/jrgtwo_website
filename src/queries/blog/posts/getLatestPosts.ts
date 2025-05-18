@@ -5,5 +5,6 @@ export function getLatestPosts(client: TypedSupabaseClient) {
     .from('Blog')
     .select('*')
     .order('created_at', { ascending: false })
+    .filter('published', 'eq', true)
     .limit(10)
 } 

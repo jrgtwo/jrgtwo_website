@@ -11,4 +11,5 @@ export function getFeaturedPosts(client: TypedSupabaseClient) {
     .is('featured', true)
     .limit(5)
     .order('created_at', { ascending: false })
+    .filter('published', 'eq', true)
 } 

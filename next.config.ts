@@ -1,5 +1,5 @@
 import type { NextConfig } from 'next'
-
+import createMDX from '@next/mdx'
 
 const nextConfig: NextConfig = {
   //output: 'export', // Outputs a Single-Page Application (SPA)
@@ -10,6 +10,12 @@ const nextConfig: NextConfig = {
       new URL('https://nvqrxmwjwwludwohgocs.supabase.co/storage/v1/object/public/**')
     ]
   },
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
 }
 
-export default nextConfig
+const withMDX = createMDX({
+  extension: /\.(md|mdx)$/,
+  // Add markdown plugins here, as desired
+})
+
+export default withMDX(nextConfig)

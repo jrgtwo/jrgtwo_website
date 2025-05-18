@@ -17,6 +17,7 @@ export type Database = {
           image: string | null
           image_description: string | null
           post: string
+          published: boolean
           short_blurb: string | null
           tags: string[]
           thumbnail: string | null
@@ -29,6 +30,7 @@ export type Database = {
           image?: string | null
           image_description?: string | null
           post: string
+          published?: boolean
           short_blurb?: string | null
           tags: string[]
           thumbnail?: string | null
@@ -41,6 +43,7 @@ export type Database = {
           image?: string | null
           image_description?: string | null
           post?: string
+          published?: boolean
           short_blurb?: string | null
           tags?: string[]
           thumbnail?: string | null

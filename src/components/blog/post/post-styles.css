@@ -123,3 +123,11 @@
     }
   }
 }
+
+ul {
+  padding: 16px;
+  li {
+    list-style: disc;
+    line-height: 2;
+  }
+}
