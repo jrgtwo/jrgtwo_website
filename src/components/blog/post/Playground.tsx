@@ -60,7 +60,7 @@ export default function Playground({
               {showConsole && (
                 <>
                   <h3 className="p-2 font-bold text-l">Console:</h3>
-                  <SandpackConsole standalone={!showPreview} className="min-h-20 max-h-20" />
+                  <SandpackConsole standalone={!showPreview} className="min-h-20 max-h-40" />
                 </>
               )}
             </div>
