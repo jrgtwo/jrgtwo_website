@@ -16,9 +16,10 @@ export default function BlogList({ data }: { data: POSTS_PROP }) {
           {index !== 0 && <Separator className="my-4" />}
           <div>
             <Link href={`/blog/post/${post.id}`}>
-              <div className="flex gap-4 mt-4 p-4 items-center">
+              <div className="flex flex-col md:flex-row gap-4 mt-4 p-4 items-center">
                 {post.thumbnail && (
                   <Image
+                    className="w-full"
                     src={post.thumbnail}
                     alt=""
                     width={200}
