@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/next';
+import { PostHogProvider } from '@/components/providers/PostHogProvider';
 import { MainHeader } from '@/components/mainHeader/MainHeader'
 import { MainFooter } from '@/components/mainFooter/MainFooter'
 import { ReactQueryClientProvider } from '@/components/providers/ReactQueryClientProvider'
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { PostHogProvider } from '@/components/providers/PostHogProvider';
 import Favicon from '@/assets/favicon.ico'
 import '../index.css'
 
@@ -36,6 +37,7 @@ export default function RootLayout({
                 {children}
               </PostHogProvider>
               <SpeedInsights />
+              <Analytics />
             </section>
             <MainFooter />
           </ReactQueryClientProvider>
