@@ -126,7 +126,8 @@
 
 ul {
   padding: 16px;
-  width: 38em;
+  width:90%;
+  max-width: 38em;
   margin: auto;
   li {
     list-style: disc;
