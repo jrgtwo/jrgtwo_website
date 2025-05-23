@@ -5,6 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import type { Tables } from "@/types/db/database.types";
 import { MDXRemote } from 'next-mdx-remote-client/rsc'
 import Playground from './Playground'
+import ReactPlayground from './ReactPlayground';
 import './post-styles.css'
 
 type POST = Tables<'Blog'> | undefined | null
@@ -41,6 +42,7 @@ export default function BlogPost({ postId, post }: { postId: string, post: POST 
             source={post?.post || ''}
             components={{
               Playground,
+              ReactPlayground
             }} />
         </article>
       </div>

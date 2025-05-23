@@ -1,1 +1,153 @@
 import Playground from '@/components/blog/post/Playground.tsx';
+import ReactPlayground from '@/components/blog/post/ReactPlayground.tsx';
+
+
+Let's build a button! Today we are going to look into building a button component in React. First we will stop off simple, and straight forward. But by the end we will have a very reusable and composable button.  We will also learn how to build resulable components in general. Now let's start off with the simplest button,  a basic `html` `button` tag.  Nothing wrong with this, it works perfectly well, it is also as customisable as you'd like.  But it is not reausable unless you copy and paste the button everywhere you want to use it.
+<ReactPlayground
+  showPreview
+  showTabs  
+  data={{code: 
+`import { useState } from 'react';
+
+export default function App() {
+    const [count, setCount] = useState(0);
+
+    const handleClick = () => {
+      setCount(prev => prev + 1)
+    }
+    return (
+      <>
+        <h2>Hello World! {count}</h2>
+        <button onClick={handleClick}>Click Me</button>
+      </>
+    )
+}`}}
+/>
+
+Now let's move the `html` `button` into it's own component. This way any changes we make to the button will show up everytime we use the button. This helps us unify styles across a code base. As you can see, the `Button` component gets imported into `App` because we need to get access to the component file. Then we add the new `Button` component to our page.
+<ReactPlayground
+  showPreview
+  showTabs
+  data={{
+    files: {
+      "/App.js": 
+`import { useState } from 'react';
+import Button from '/Button';
+
+export default function App() {
+    const [count, setCount] = useState(0);
+
+    const handleClick = () => {
+      setCount(prev => prev + 1)
+    }
+    return (
+      <>
+        <h2>Hello World! {count}</h2>
+        <Button onClick={handleClick}>Click Me</Button>
+      </>
+    )
+}`, 
+      "/Button.js":
+`export default function Button({ onClick, children }) {
+    return (
+      <button onClick={onClick}>
+        {children}
+      </button>
+    )
+}`
+    }
+  }}
+/>
+
+This is good and all but we haven't done much but add more and more boilerplate code just to make a button. So now let's add some updated styling to our button.  With Tailwind, we can add some new styles to the button, and now everytime we import this button it will be already styled.   
+<ReactPlayground
+  showPreview
+  showTabs
+  data={{
+    files: {
+      "/App.js": 
+`import { useState } from 'react';
+import Button from '/Button';
+
+export default function App() {
+    const [count, setCount] = useState(0);
+
+    const handleClick = () => {
+      setCount(prev => prev + 1)
+    }
+    return (
+      <>
+        <h2>Hello World! {count}</h2>
+        <Button onClick={handleClick}>Click Me</Button>
+      </>
+    )
+}`, 
+      "/Button.js":
+`export default function Button({ onClick, children }) {
+    return (
+      <button 
+        className="text-red-600 border border-amber-700"
+        onClick={onClick}>
+        {children}
+      </button>
+    )
+}`
+    }
+  }}
+/>
+
+Great, we have a reusable button that is styled, but we are stuck with a single style, what if we want to have different styles of the same button?  Well for that we now have to introduce `CVA` or `class-variance-authority`.  This tool accepts default class parameters, as well as object notation were keys represent specific style variants.   This allows us to create a very customisable component, and only requires a few updates to our code.
+<ReactPlayground
+  showPreview
+  showTabs
+  data={{
+    files: {
+      "/App.js": 
+`import { useState } from 'react';
+import Button from '/Button';
+
+export default function App() {
+    const [count, setCount] = useState(0);
+
+    const handleClick = () => {
+      setCount(prev => prev + 1)
+    }
+    return (
+      <>
+        <h2>Hello World! {count}</h2>
+        <Button variant="primary" onClick={handleClick}>Click Me</Button>
+        <Button variant="secondary" onClick={handleClick}>Click Me</Button>
+      </>
+    )
+}`, 
+      "/Button.js":
+`import { cva } from 'class-variance-authority'
+
+export default function Button({ onClick, children, variant, className, ...rest }) {
+    const classList = cva(["font-semibold", "border", "rounded"], {
+        variants: {
+          intent: {
+            primary: ["bg-blue-500", "text-white", "border-transparent"],
+            secondary: ["bg-white", "text-gray-800", "border-gray-400"],
+          },
+          size: {
+            small: ["text-sm", "py-1", "px-2"],
+            medium: ["text-base", "py-2", "px-4"],
+          },
+        }
+    }, className)
+
+    return (
+      <button 
+        className={classList({intent: variant})}
+        onClick={onClick}
+        {...rest}>
+        {children} 
+      </button>
+    )
+}`
+    }
+  }}
+/>
+
+Finally we have a very customisable button that is easy to use and can cover mutliple use cases across a growing repo.  It is also an easy structure to move to other reusable components and expand functionality with a simple to follow API.  Now that we have covered buttons from zero to hero, get out there and start making variants for components!!
