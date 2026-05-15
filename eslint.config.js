@@ -4,11 +4,14 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
 import pluginQuery from '@tanstack/eslint-plugin-query'
+import nextPlugin from '@next/eslint-plugin-next'
 
 export default tseslint.config(
-  { ignores: ['dist'] },
+  { ignores: ['dist', 'src/app/_blog/**', 'src/app/_editor/**', 'src/components/blog/**', 'src/queries/**', 'src/lib/db/**'] },
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
+  nextPlugin.flatConfig.recommended,
   {
-    extends: [js.configs.recommended, ...tseslint.configs.recommended, 'plugin:@next/next/recommended'],
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2020,

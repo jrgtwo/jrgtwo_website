@@ -1,6 +1,4 @@
-import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import Link from 'next/link'
-import avatar from './../../../assets/avatar.jpeg'
 
 export const MainHeading = () => {
   return (
